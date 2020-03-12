@@ -41,7 +41,7 @@ class Paginator extends Page implements IPaginator
 			'elementsByPage' => $this->elementsByPage,
 			'totalElements' => $this->totalElements,
 			'totalPages' => $this->totalPages,
-			'numbers' => $this->numbersPage
+			'numbersPage' => $this->numbersPage
 		);
 	}
 }
