@@ -29,10 +29,12 @@ $size = 2;   // Elements by page
 
 $offset = $pageNumber * $size;  // get offset
 
+$countArray = sizeof($productos);
+
 $products = array_slice($products, $offset, $size);
 
 use Jdzm\JDZPaginator\Pagination\Paginator;
-$paginator = new Paginator($pageNumber, $size, $products);
+$paginator = new Paginator($pageNumber, $size, $countArray, $products);
 
 header('Content-Type: application/json');
 	

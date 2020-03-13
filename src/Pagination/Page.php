@@ -11,11 +11,11 @@ class Page
 	public $totalElements;   	// Se puede obtener de la base de datos
 	public $totalPages;
 
-	public function __construct($current_page, $elementsByPage, $data = array())
+	public function __construct($current_page, $elementsByPage, $totalElements)
 	{
 		$this->current_page = $current_page;
 		$this->elementsByPage = $elementsByPage;
-		$this->totalElements = count($data);
+		$this->totalElements = $totalElements;
 
 		$this->getTotalPages();
 		$this->goNext();

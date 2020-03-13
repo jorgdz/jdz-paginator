@@ -8,10 +8,10 @@ class Paginator extends Page implements IPaginator
 	public $data = array();
 	public $numbersPage = array();
 
-	public function __construct($currentPage, $size, $data = array())
+	public function __construct($currentPage, $size, $totalElements, $data = array())
 	{
 		$this->data = $data;
-		parent::__construct($currentPage, $size, $data);
+		parent::__construct($currentPage, $size, $totalElements);
 		$this->getNumbersPage();
 	}
 

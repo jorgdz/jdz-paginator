@@ -8,21 +8,21 @@ class PaginatorTest extends \PHPUnit\Framework\TestCase
 	private $currentPage = 0;
 	private $size = 3;
 	private $page;
-    private $data = array('Java', 'PHP', 'Spring', 'Angular', 'Vue JS', 'Laravel', 'Symfony');
+    private $totalElements = 13;
 
 	/**
      * @before
      */
 	public function init ()
 	{
-     	$this->page = new Page($this->currentPage, $this->size, $this->data);
+     	$this->page = new Page($this->currentPage, $this->size, $this->totalElements);
 	}
 
 	public function testGetTotalPages()
     {
     	// 28 / 5 = 5  y  (5*5)  = 25 siendo 25 < totalElementos por lo tanto el total de páginas debe ser 5
      	print 'Total de páginas: '. $this->page->getTotalPages();
-     	$this->assertTrue(($this->page->getTotalPages() == 2) ? true : false);
+     	$this->assertTrue(($this->page->getTotalPages() == 4) ? true : false);
     }
 
     public function testGoNext ()
