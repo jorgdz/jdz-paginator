@@ -5,11 +5,13 @@ use Jdzm\JDZPaginator\Pagination\Contracts\IPaginator;
 
 class Paginator extends Page implements IPaginator
 {
+	public $data = array();
 	public $numbersPage = array();
-	
-	public function __construct($currentPage, $size, $totalElements)
+
+	public function __construct($currentPage, $size, $data = array())
 	{
-		parent::__construct($currentPage, $size, $totalElements);
+		$this->data = $data;
+		parent::__construct($currentPage, $size, $data);
 		$this->getNumbersPage();
 	}
 
@@ -35,6 +37,7 @@ class Paginator extends Page implements IPaginator
 	public function paginate()
 	{
 		return array(
+			'data' => $this->data,
 			'current_page' => $this->current_page,
 			'prev' => $this->prev,
 			'next' => $this->next,

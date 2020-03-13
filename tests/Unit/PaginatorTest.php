@@ -6,23 +6,23 @@ use Jdzm\JDZPaginator\Pagination\Page;
 class PaginatorTest extends \PHPUnit\Framework\TestCase
 {
 	private $currentPage = 0;
-	private $size = 5;
-	private $totalElements = 28;
+	private $size = 3;
 	private $page;
+    private $data = array('Java', 'PHP', 'Spring', 'Angular', 'Vue JS', 'Laravel', 'Symfony');
 
 	/**
      * @before
      */
 	public function init ()
 	{
-     	$this->page = new Page($this->currentPage, $this->size, $this->totalElements);
+     	$this->page = new Page($this->currentPage, $this->size, $this->data);
 	}
 
 	public function testGetTotalPages()
     {
     	// 28 / 5 = 5  y  (5*5)  = 25 siendo 25 < totalElementos por lo tanto el total de páginas debe ser 5
      	print 'Total de páginas: '. $this->page->getTotalPages();
-     	$this->assertTrue(($this->page->getTotalPages() == 5) ? true : false);
+     	$this->assertTrue(($this->page->getTotalPages() == 2) ? true : false);
     }
 
     public function testGoNext ()

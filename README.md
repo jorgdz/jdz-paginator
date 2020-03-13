@@ -15,13 +15,13 @@ composer require jdzm/jdz-paginator
 ```
 <?php
 
-	$products = array(
-		array('id' => 1,'nombre' => 'Producto 1','precio' => 100,'created_at' => date('Y-m-d')),
-		array('id' => 2,'nombre' => 'Producto 2','precio' => 200,'created_at' => date('Y-m-d')),
-		array('id' => 3,'nombre' => 'Producto 3','precio' => 250,'created_at' => date('Y-m-d')),
-		array('id' => 5,'nombre' => 'Producto 4','precio' => 350, 'created_at' => date('Y-m-d')),
-		array('id' => 6,'nombre' => 'Producto 5','precio' => 50, 'created_at' => date('Y-m-d'))
-	);
+$products = array(
+	array('id' => 1,'nombre' => 'Producto 1','precio' => 100,'created_at' => date('Y-m-d')),
+	array('id' => 2,'nombre' => 'Producto 2','precio' => 200,'created_at' => date('Y-m-d')),
+	array('id' => 3,'nombre' => 'Producto 3','precio' => 250,'created_at' => date('Y-m-d')),
+	array('id' => 5,'nombre' => 'Producto 4','precio' => 350, 'created_at' => date('Y-m-d')),
+	array('id' => 6,'nombre' => 'Producto 5','precio' => 50, 'created_at' => date('Y-m-d'))
+);
 
 $pageNumber = 0;  // Page number for current page
 	
