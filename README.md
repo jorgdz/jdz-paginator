@@ -29,18 +29,13 @@ $size = 2;   // Elements by page
 
 $offset = $pageNumber * $size;  // get offset
 
-$countArray = sizeof($products);
 $products = array_slice($products, $offset, $size);
 
 use Jdzm\JDZPaginator\Pagination\Paginator;
-$paginator = new Paginator($pageNumber, $size, $countArray);
+$paginator = new Paginator($pageNumber, $size, $products);
 
 header('Content-Type: application/json');
-	$data = [
-		'data' => $products,
-		'pagination' => $paginator->paginate()
-	];
 	
-echo json_encode($data);   // GET DATA IN JSON FORMAT
+echo json_encode($paginator->paginate());   // GET DATA IN JSON FORMAT
 
 ```
